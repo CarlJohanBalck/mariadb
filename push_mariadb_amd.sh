@@ -3,7 +3,6 @@
 # Source config
 source config.sh
 
-
 # Dump the MySQL database to a file
 docker exec db /usr/bin/mysqldump -u root --password=root cool_db > backup_${DATE}.sql
 

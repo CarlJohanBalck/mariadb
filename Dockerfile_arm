@@ -1,0 +1,12 @@
+# Use an official MariaDB image as a parent image
+FROM arm64v8/mariadb:10.5
+
+# Set the environment variables for the database
+ENV MYSQL_DATABASE=cool_db \
+    MYSQL_USER=root \
+    MYSQL_ROOT_PASSWORD=root 
+# Copy the SQL script into the container
+COPY /*.sql /docker-entrypoint-initdb.d/
+
+# Expose the port that the database will run on
+EXPOSE 3306
